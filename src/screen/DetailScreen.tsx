@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image} from 'react-native';
+import { Image } from 'react-native';
 import {
   Container,
   Left,
@@ -11,12 +11,11 @@ import {
   CardItem,
   Card,
 } from 'native-base';
-import {Route} from '../interface/Routet';
+import { Route } from '../interface/Routet';
 import NavBarBottom from '../components/NavBarBottom';
 
-const DetailsScreen = ({route}: Route) => {
-  // const navigation = useNavigation();
-  const {name, price, description} = route.params;
+const DetailsScreen = ({ route }: Route) => {
+  const { name, price, description, image } = route.params;
   return (
     <Container>
       <Content>
@@ -32,11 +31,8 @@ const DetailsScreen = ({route}: Route) => {
           <CardItem>
             <Body>
               <Image
-                style={{height: 300, width: '100%', flex: 1}}
-                source={{
-                  uri:
-                    'https://i.gzn.jp/img/2020/06/05/instagram-threw-embedding-api-copyright/00.jpg',
-                }}
+                style={{ height: 300, width: '100%', flex: 1 }}
+                source={{ uri: image }}
               />
               <Text>商品説明</Text>
               <Text>{description}</Text>

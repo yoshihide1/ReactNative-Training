@@ -59,6 +59,7 @@ const ItemList = () => {
                   name: item.name,
                   price: item.price,
                   description: item.description,
+                  image: fetchImagePath(item.image_path)
                 })
               }>
               <Text>詳細</Text>

@@ -1,7 +1,8 @@
 import React from 'react'
-import { Content, Form, Input, Item, Label } from 'native-base'
+import { Content, Form, Input, Item, Label, Text, Button } from 'native-base'
 import LoginScreen from '../screen/LoginScreen'
 import { StyleSheet } from 'react-native'
+import {createMember} from '../components/Fetch'
 
 const LoginForm = () => {
   return (
@@ -9,11 +10,12 @@ const LoginForm = () => {
       <Form>
         <Label>メールアドレス</Label>
         <Item>
-          <Input style={styles.input}/>
+          <Input style={styles.input} />
         </Item>
         <Label>パスワード</Label>
         <Item>
-          <Input/>
+          <Input />
+          <Button full onPress={()=> createMember()}><Text>新規登録</Text></Button>
         </Item>
       </Form>
     </Content>
@@ -21,7 +23,7 @@ const LoginForm = () => {
 }
 const styles = StyleSheet.create({
   input: {
-    borderBottomWidth:2,
+    borderBottomWidth: 2,
     borderBottomColor: 'green'
   }
 })
